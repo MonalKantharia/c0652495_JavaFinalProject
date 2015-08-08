@@ -20,23 +20,43 @@ public class Admin {
     Connection connect;
     boolean check = false;
 
+    /**
+     *
+     * @return
+     */
     public String getAdminEmail() {
         return adminEmail;
     }
 
+    /**
+     *
+     * @param adminEmail
+     */
     public void setAdminEmail(String adminEmail) {
         this.adminEmail = adminEmail;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getAdminPassword() {
         return adminPassword;
     }
 
+    /**
+     *
+     * @param adminPassword
+     */
     public void setAdminPassword(String adminPassword) {
         this.adminPassword = adminPassword;
     }
 
-    
+    /**
+     *
+     * @param adminEmail
+     * @param adminPassword
+     */
     public Admin(String adminEmail, String adminPassword) {
         
         this.adminEmail = adminEmail;
@@ -44,6 +64,10 @@ public class Admin {
     
     }
     
+    /**
+     *
+     * @return
+     */
     public boolean checkAdminLogin(){
         try{
             connect = new DB_Connection().getConnection();
@@ -73,6 +97,11 @@ public class Admin {
         return check;
     }
     
+    /**
+     *
+     * @param newAdminPassword
+     * @return
+     */
     public boolean changePassword(String newAdminPassword){
         try{
             connect = new DB_Connection().getConnection();
